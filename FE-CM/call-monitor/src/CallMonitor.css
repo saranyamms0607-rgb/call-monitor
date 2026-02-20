@@ -54,9 +54,9 @@ body, .call-monitor-root{font-family:Inter, system-ui, -apple-system, 'Segoe UI'
 }
 .btn-open-top:hover{background:var(--primary-dark);color:var(--white);border-color:var(--primary-dark)}
 
-.cm-container{max-width:1200px;margin:0 auto;background:transparent}
+.cm-container{width:100%;margin:0;padding:0 24px;background:transparent}
 .cm-table-wrap{overflow:auto;border-radius:8px;border:1px solid var(--border-soft);box-shadow:var(--shadow-medium);}
-.cm-table{border-collapse:collapse;width:100%;min-width:1100px}
+.cm-table{border-collapse:collapse;width:100%}
 .cm-table th,.cm-table td{padding:10px 12px;border-bottom:1px solid var(--border-soft);font-size:14px}
 .header-row th{background:var(--primary-dark);color:var(--text-light);text-align:left;padding:12px 14px;position:sticky;top:0;z-index:3}
 .data-row td{background:var(--input-bg);vertical-align:middle}
@@ -86,6 +86,14 @@ body, .call-monitor-root{font-family:Inter, system-ui, -apple-system, 'Segoe UI'
 @media (max-width:900px){
   .cm-container{padding:0 8px}
   .scoring-header,.scoring-row{grid-template-columns:1fr 60px 1fr}
-  .cm-table{min-width:900px}
+
+  /* Stacked card layout for table rows */
+  .cm-table, .cm-table thead, .cm-table tbody, .cm-table th, .cm-table td, .cm-table tr { display: block; width: 100%; }
+  .cm-table thead { display: none; }
+  .cm-table tr { background: var(--card-bg); border-radius:8px; margin-bottom:12px; padding:12px; box-shadow:var(--shadow-soft); border:1px solid var(--border-soft); }
+  .cm-table td { border: none; padding:8px 6px; display:flex; align-items:center; justify-content:space-between; gap:8px }
+  .cm-table td:before { content: attr(data-label); display:block; font-weight:600; color:var(--text-muted-dark); font-size:13px; flex:0 0 38%; text-align:left }
+  .cm-table td .cm-input, .cm-table td input, .cm-table td select { flex:1; margin-left:8px }
+  .cm-table td .btn-score, .cm-table td .btn-open { margin-left:8px }
 }
 

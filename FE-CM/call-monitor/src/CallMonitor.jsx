@@ -528,8 +528,8 @@ body{font-family:Inter, Arial, sans-serif;background:var(--cream-bg);color:var(-
           <tbody>
             {computedRows.map((row) => (
               <tr key={row.id} className="data-row">
-                <td className="cell-center">{row.srNo}</td>
-                <td>
+                <td className="cell-center" data-label="Sr.No">{row.srNo}</td>
+                <td data-label="CRE Real Name">
                   <input
                     value={row.creRealName}
                     onChange={(e) => updateCell(row.id, 'creRealName', e.target.value)}
@@ -537,28 +537,28 @@ body{font-family:Inter, Arial, sans-serif;background:var(--cream-bg);color:var(-
                     placeholder="Name"
                   />
                 </td>
-                <td>
+                <td data-label="CRE Login ID">
                   <input
                     value={row.creLoginId}
                     onChange={(e) => updateCell(row.id, 'creLoginId', e.target.value)}
                     className="cm-input"
                   />
                 </td>
-                <td>
+                <td data-label="Supervisor">
                   <input
                     value={row.supervisor}
                     onChange={(e) => updateCell(row.id, 'supervisor', e.target.value)}
                     className="cm-input"
                   />
                 </td>
-                <td>
+                <td data-label="Manager">
                   <input
                     value={row.manager}
                     onChange={(e) => updateCell(row.id, 'manager', e.target.value)}
                     className="cm-input"
                   />
                 </td>
-                <td>
+                <td data-label="Location">
                   <input
                     value={row.location}
                     onChange={(e) => updateCell(row.id, 'location', e.target.value)}
@@ -566,7 +566,7 @@ body{font-family:Inter, Arial, sans-serif;background:var(--cream-bg);color:var(-
                     placeholder="CMC - CBE"
                   />
                 </td>
-                <td>
+                <td data-label="Tenure Slab">
                   <select value={row.tenure} onChange={(e) => updateCell(row.id, 'tenure', e.target.value)}>
                     <option value="">Select</option>
                     <option>0 to 1 Month</option>
@@ -574,48 +574,48 @@ body{font-family:Inter, Arial, sans-serif;background:var(--cream-bg);color:var(-
                     <option>2 to 3 Months</option>
                   </select>
                 </td>
-                <td>
+                <td data-label="Batch">
                   <input value={row.batch} onChange={(e) => updateCell(row.id, 'batch', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Process">
                   <input value={row.process} onChange={(e) => updateCell(row.id, 'process', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Monitoring Person">
                   <input value={row.monitoringPerson} onChange={(e) => updateCell(row.id, 'monitoringPerson', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Client Phone Number">
                   <input value={row.clientPhone} onChange={(e) => updateCell(row.id, 'clientPhone', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Project Type">
                   <select value={row.projectType} onChange={(e) => updateCell(row.id, 'projectType', e.target.value)}>
                     <option value="">Select</option>
                     <option>Project A</option>
                     <option>Project B</option>
                   </select>
                 </td>
-                <td>
+                <td data-label="Service Type">
                   <select value={row.serviceType} onChange={(e) => updateCell(row.id, 'serviceType', e.target.value)}>
                     <option value="">Select</option>
                     <option>Outbound</option>
                     <option>International</option>
                   </select>
                 </td>
-                <td>
+                <td data-label="Client Name">
                   <input value={row.clientName} onChange={(e) => updateCell(row.id, 'clientName', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Date Of Monitoring">
                   <input type="date" value={row.dateOfMonitoring} onChange={(e) => updateCell(row.id, 'dateOfMonitoring', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Call Date">
                   <input type="date" value={row.callDate} onChange={(e) => updateCell(row.id, 'callDate', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Duration-Minute">
                   <input type="number" min="0" value={row.durationMinute} onChange={(e) => updateCell(row.id, 'durationMinute', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Duration-Second">
                   <input type="number" min="0" value={row.durationSecond} onChange={(e) => updateCell(row.id, 'durationSecond', e.target.value)} />
                 </td>
-                <td>
+                <td data-label="Opening & Closing">
                   <select value={row.openingClosing} onChange={(e) => updateCell(row.id, 'openingClosing', e.target.value)}>
                     <option value="">-</option>
                     <option>GREEN</option>
@@ -623,7 +623,7 @@ body{font-family:Inter, Arial, sans-serif;background:var(--cream-bg);color:var(-
                     <option>RED</option>
                   </select>
                 </td>
-                <td>
+                <td data-label="Listening & Probing">
                   <select value={row.listeningProbing} onChange={(e) => updateCell(row.id, 'listeningProbing', e.target.value)}>
                     <option value="">-</option>
                     <option>GREEN</option>
@@ -631,7 +631,7 @@ body{font-family:Inter, Arial, sans-serif;background:var(--cream-bg);color:var(-
                     <option>RED</option>
                   </select>
                 </td>
-                <td>
+                <td data-label="Politeness & Courtesy">
                   <select value={row.politeness} onChange={(e) => updateCell(row.id, 'politeness', e.target.value)}>
                     <option value="">-</option>
                     <option>GREEN</option>
@@ -639,33 +639,33 @@ body{font-family:Inter, Arial, sans-serif;background:var(--cream-bg);color:var(-
                     <option>RED</option>
                   </select>
                 </td>
-                <td>
+                <td data-label="Rude (FATAL)">
                   <select value={row.rude} onChange={(e) => updateCell(row.id, 'rude', e.target.value)}>
                     <option>NO</option>
                     <option>YES</option>
                   </select>
                 </td>
-                <td className="cell-center">{row.communicationScorable}</td>
-                <td>
+                <td className="cell-center" data-label="Communication Scorable">{row.communicationScorable}</td>
+                <td data-label="Communication Scored">
                   <input type="number" value={row.communicationScored} onChange={(e) => updateCell(row.id, 'communicationScored', Number(e.target.value) || 0)} />
                 </td>
-                <td className="cell-center">{row.productKnowledgeScorable}</td>
-                <td>
+                <td className="cell-center" data-label="Product Knowledge Scorable">{row.productKnowledgeScorable}</td>
+                <td data-label="Product Knowledge Scored">
                   <input type="number" value={row.productKnowledgeScored} onChange={(e) => updateCell(row.id, 'productKnowledgeScored', Number(e.target.value) || 0)} />
                 </td>
-                <td className="cell-center">{row.taggingScorable}</td>
-                <td>
+                <td className="cell-center" data-label="Tagging Scorable">{row.taggingScorable}</td>
+                <td data-label="Tagging Scored">
                   <input type="number" value={row.taggingScored} onChange={(e) => updateCell(row.id, 'taggingScored', Number(e.target.value) || 0)} />
                 </td>
-                <td className="cell-center">
+                <td className="cell-center" data-label="Scoring">
                   <button className="btn-score" onClick={() => toggleScoring(row.id)}>{scoringRowId === row.id ? 'Close' : 'Scoring'}</button>
                 </td>
-                <td className="cell-center">
+                <td className="cell-center" data-label="Open Form">
                   <button className="btn-open" onClick={() => openFormWindow(row)}>Open Form</button>
                 </td>
-                <td className="cell-center">{row.totalScorable}</td>
-                <td className="cell-center">{row.totalScored}</td>
-                <td className="cell-center">{row.qualityPercent}%</td>
+                <td className="cell-center" data-label="Total Scorable">{row.totalScorable}</td>
+                <td className="cell-center" data-label="Total Scored">{row.totalScored}</td>
+                <td className="cell-center" data-label="Total Quality %">{row.qualityPercent}%</td>
               </tr>
             ))}
           </tbody>
