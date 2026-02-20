@@ -1,0 +1,38 @@
+### Python ###
+venv/
+.venv/
+env/
+.env
+.env.*
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+### Django ###
+db.sqlite3
+media/
+
+### Node ###
+node_modules/
+FE-CM/call-monitor/node_modules/
+FE-CM/call-monitor/dist/
+
+### Editors ###
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+### System ###
+.DS_Store
+Thumbs.db
+
+### Build ###
+dist/
+build/
+
+### Logs ###
+*.log
